@@ -6,7 +6,7 @@ set textwidth=80
 noremap <C-d> <NOP>
 " Easily Open VIMRC
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall -include stdio.h scratch.c -o /tmp/c.out && /tmp/c.out <cr>
+noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out && /tmp/c.out <cr>
 " Alphabetize some stuff!
 vnoremap <Leader>s :sort<CR
 " Pasting!
@@ -15,7 +15,7 @@ set clipboard=unnamed
 syntax on
 syntax enable
 " Colorsheme & Fonts
-colorscheme SlateDark
+colorscheme wells-colors
 set background=dark
 set guifont=Inconsolata\ for\ Powerline:h16
 set linespace=0
@@ -84,7 +84,7 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype c setlocal ts=4 sts=4 sw=4 expandtab smarttab
 execute "set colorcolumn=" . join(range(81,81), ',')
-highlight ColorColumn ctermbg=2 guibg=#000000
+highlight ColorColumn ctermbg=0 guibg=#000000
 " Airline
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
