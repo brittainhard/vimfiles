@@ -4,6 +4,12 @@
 "     version: 1.2
 " This color scheme uses a dark background.
 
+set background=dark
+hi clear
+if exists("syntax_on")
+   syntax reset
+endif
+
 let colors_name = "neon"
 
 hi Normal       guifg=#f0f0f0 guibg=#303030
