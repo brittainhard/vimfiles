@@ -9,7 +9,9 @@ noremap <C-d> <NOP>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out && /tmp/c.out <cr>
 " Alphabetize some stuff!
-vnoremap <Leader>s :sort<CR
+nnoremap <leader>vs :vsplit \| E<cr>
+nnoremap <leader>hs :split \| E<cr>
+nnoremap <leader>te :tabedit \| E<cr>
 " Pasting!
 set clipboard=unnamed
 set statusline=%f
