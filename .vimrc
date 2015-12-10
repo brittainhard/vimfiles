@@ -2,6 +2,8 @@
 set t_Co=256
 let mapleader=","
 set textwidth=80
+set cursorline
+au BufWinEnter * match ErrorMsg '\%81v.'
 " set wrapmargin=1
 " Disable arrow keys for navigation
 noremap <C-d> <NOP>
@@ -35,7 +37,7 @@ set nobackup
 set noswapfile
 " Side Numbers
 set relativenumber
-set numberwidth=4 
+set numberwidth=4
 " Tab Stuff
 set tabstop=4
 set expandtab
@@ -72,11 +74,8 @@ inoremap {)<CR> {<CR>});<c-o>O
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype c setlocal ts=4 sts=4 sw=4 expandtab smarttab
-" colorcolumn
-set colorcolumn=80
 " Rainbow Parens
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-highlight ColorColumn ctermbg=0 guibg=lightgrey
