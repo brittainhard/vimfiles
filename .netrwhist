@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/bhard/Documents'
 let g:netrw_dirhist_2='/Users/bhard/Documents/memex-explorer'
 let g:netrw_dirhist_3='/Users/bhard/Documents/memex-explorer/source/task_manager'
 let g:netrw_dirhist_4='/Users/bhard/Documents/memex-explorer/source/task_manager/migrations'
 let g:netrw_dirhist_5='/Users/bhard/Documents/memex-explorer/source/task_manager'
 let g:netrw_dirhist_6='/Users/bhard/Documents/memex-explorer/source'
+let g:netrw_dirhist_7='/Users/bhard/Documents/domain_discovery_tool'
+let g:netrw_dirhist_8='/Users/bhard/Documents/domain_discovery_tool/models'
+let g:netrw_dirhist_9='/Users/bhard/Documents/thescraper/thescraper/thescraper'
