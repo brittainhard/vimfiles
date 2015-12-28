@@ -14,6 +14,7 @@ noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out &&
 nnoremap <leader>vs :vsplit \| E<cr>
 nnoremap <leader>hs :split \| E<cr>
 nnoremap <leader>te :tabedit \| E<cr>
+nnoremap <leader>te :tabedit \| E<cr>
 " Pasting!
 set clipboard=unnamed
 set statusline=%f
@@ -22,7 +23,7 @@ set statusline+=\ %y
 syntax on
 syntax enable
 " Colorsheme & Fonts
-colorscheme neonwave
+colorscheme molokai
 set background=dark
 set guifont=Inconsolata\ for\ Powerline:h16
 set linespace=0
@@ -65,11 +66,18 @@ map <f6> :w\|!mit-scheme -load % <cr>
 map <f7> :!py.test<cr>
 map <f8> :w\|!pep8 % -v <cr>
 " Keybindings
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
+inoremap " ""<Esc>:let leavechar="\""<CR>i
+inoremap ' ''<Esc>:let leavechar="'"<CR>i
+inoremap < <><Esc>:let leavechar=">"<CR>i
+inoremap [<CR> [<CR>]<c-o>O
 inoremap {<CR> {<CR>}<c-o>O
 inoremap [<CR> [<CR>]<c-o>O
 inoremap (<CR> (<CR>)<c-o><<<c-o>O
-inoremap ({<CR> ({<CR>});<c-o>O
-inoremap {)<CR> {<CR>});<c-o>O
+" Wrap and use ctrl-j to escape to outside wrapping char.
+inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
 " ctrl-p ignores
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab smarttab

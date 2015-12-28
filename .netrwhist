@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/bhard/Documents/domain_discovery_tool/vis/html/js'
-let g:netrw_dirhist_2='/Users/bhard/Documents/domain_discovery_tool'
-let g:netrw_dirhist_3='/Users/bhard/Documents/domain_discovery_tool/vis'
-let g:netrw_dirhist_4='/Users/bhard/Documents/domain_discovery_tool/vis/bokeh_plots'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/bhard/Documents/coffeeing/src'
+let g:netrw_dirhist_2='/Users/bhard/Documents/coffeeing'
+let g:netrw_dirhist_3='/Users/bhard/Documents/coffeeing/src'
