@@ -10,6 +10,10 @@ noremap <C-d> <NOP>
 " Easily Open VIMRC
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out && /tmp/c.out <cr>
+noremap <leader>cf :w\|!coffee % <cr>
+noremap <leader>rj :w\|!node % <cr>
+noremap <leader>rp :w\|!python % <cr>
+noremap <leader>ip :w\|!ipython -i % <cr>
 " Alphabetize some stuff!
 nnoremap <leader>vs :vsplit \| E<cr>
 nnoremap <leader>hs :split \| E<cr>
@@ -71,7 +75,6 @@ inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
 inoremap " ""<Esc>:let leavechar="\""<CR>i
 inoremap ' ''<Esc>:let leavechar="'"<CR>i
-inoremap < <><Esc>:let leavechar=">"<CR>i
 inoremap [<CR> [<CR>]<c-o>O
 inoremap {<CR> {<CR>}<c-o>O
 inoremap [<CR> [<CR>]<c-o>O
