@@ -12,7 +12,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out && /tmp/c.out <cr>
 noremap <leader>rp :w\|!python %<cr>
 noremap <leader>ip :w\|!ipython -i %<cr>
-noremap <leader>rm :w\|!make $(echo -E % \| grep -o '[^\.]*') <cr>
+noremap <leader>rm :w\|!make $(echo -E % \| grep -o '[^\.]*') && ./$(echo -E % \| grep -o '[^\.]*')<cr>
 noremap <leader>gc :w\|!make $(echo -E % \| grep -o '[^\.]*') && gdb $(echo -E % \| grep -o '[^\.]*')<cr>
 noremap <leader>lc :w\|!make $(echo -E % \| grep -o '[^\.]*') && lldb $(echo -E % \| grep -o '[^\.]*')<cr>
 " Alphabetize some stuff!
