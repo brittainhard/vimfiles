@@ -8,17 +8,21 @@ au BufWinEnter * match ErrorMsg '\%81v.'
 " Disable arrow keys for navigation
 noremap <C-d> <NOP>
 " Easily Open VIMRC
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-noremap <leader>rc :w\|!xcrun clang -fcolor-diagnostics -Wall % -o /tmp/c.out && /tmp/c.out <cr>
+nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 noremap <leader>rp :w\|!python %<cr>
 noremap <leader>ip :w\|!ipython -i %<cr>
-noremap <leader>rm :w\|!make $(echo -E % \| grep -o '[^\.]*') && ./$(echo -E % \| grep -o '[^\.]*')<cr>
-noremap <leader>gc :w\|!make $(echo -E % \| grep -o '[^\.]*') && gdb $(echo -E % \| grep -o '[^\.]*')<cr>
-noremap <leader>lc :w\|!make $(echo -E % \| grep -o '[^\.]*') && lldb $(echo -E % \| grep -o '[^\.]*')<cr>
+noremap <leader>rm :w\|!make && ./a.out 
+noremap <leader>gd :w\|!make && gdb ./a.out <cr>
+noremap <leader>ld :w\|!make && lldb ./a.out <cr>
+noremap <leader>sc :w\|!scm -f % <cr>
+noremap <leader>gb :w\|!gulp build<cr>
+noremap <leader>rc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && ./$(echo -E % \| grep -o '^[^\.]*')<cr>
+noremap <leader>vrc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && valgrind ./$(echo -E % \| grep -o '^[^\.]*')<cr>
+noremap <leader>mc :w\|!make $(echo -E % \| grep -o '^[^\.]*')<cr>
+map <c-g> :echo "Line number" line(".") <cr>
 " Alphabetize some stuff!
 nnoremap <leader>vs :vsplit \| E<cr>
 nnoremap <leader>hs :split \| E<cr>
-nnoremap <leader>te :tabedit \| E<cr>
 nnoremap <leader>te :tabedit \| E<cr>
 " Pasting!
 set clipboard=unnamed
