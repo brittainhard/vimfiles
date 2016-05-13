@@ -9,6 +9,8 @@ au BufWinEnter * match ErrorMsg '\%81v.'
 noremap <C-d> <NOP>
 " Easily Open VIMRC
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
+noremap <leader>rn :w\|!node %<cr>
+noremap <leader>ndb :w\|!node debug %<cr>
 noremap <leader>rp :w\|!python %<cr>
 noremap <leader>ip :w\|!ipython -i %<cr>
 noremap <leader>rm :w\|!make && ./a.out 
