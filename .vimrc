@@ -5,8 +5,6 @@ set textwidth=80
 set cursorline
 au BufWinEnter * match ErrorMsg '\%81v.'
 set wrapmargin=1
-" Disable arrow keys for navigation
-noremap <C-d> <NOP>
 " Easily Open VIMRC
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 noremap <leader>rn :w\|!node %<cr>
@@ -75,20 +73,21 @@ set omnifunc=syntaxcomplete#Complete
 " folding plugin
 set nofoldenable
 " Keybindings
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
-inoremap " ""<Esc>:let leavechar="\""<CR>i
-inoremap ' ''<Esc>:let leavechar="'"<CR>i
-inoremap [<CR> [<CR>]<c-o>O
-inoremap {<CR> {<CR>}<c-o>O
-inoremap [<CR> [<CR>]<c-o>O
-inoremap (<CR> (<CR>)<c-o><<<c-o>O
+"inoremap ( ()<Esc>:let leavechar=")"<CR>i
+"inoremap [ []<Esc>:let leavechar="]"<CR>i
+"inoremap { {}<Esc>:let leavechar="}"<CR>i
+"inoremap " ""<Esc>:let leavechar="\""<CR>i
+"inoremap ' ''<Esc>:let leavechar="'"<CR>i
+"inoremap [<CR> [<CR>]<c-o>O
+"inoremap {<CR> {<CR>}<c-o>O
+"inoremap [<CR> [<CR>]<c-o>O
+"inoremap (<CR> (<CR>)<c-o><<<c-o>O
 " Wrap and use ctrl-j to escape to outside wrapping char.
-inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
+" inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
 " ctrl-p ignores
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab smarttab
+autocmd Filetype go setlocal ts=8 sts=8 sw=8 expandtab smarttab
 autocmd Filetype c setlocal ts=4 sts=4 sw=4 expandtab smarttab
 " Rainbow Parens
 au VimEnter * RainbowParenthesesToggle
@@ -97,3 +96,5 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " Go plugin
 let g:go_fmt_autosave = 0
+" Airline -- again
+let g:airline_powerline_fonts = 1
