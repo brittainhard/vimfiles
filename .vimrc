@@ -2,7 +2,6 @@
 set t_Co=256
 let mapleader=","
 set textwidth=80
-set cursorline
 au BufWinEnter * match ErrorMsg '\%81v.'
 set wrapmargin=1
 " Easily Open VIMRC
@@ -37,10 +36,11 @@ set autochdir
 syntax on
 syntax enable
 " Colorsheme & Fonts
-colorscheme wells-colors
+colorscheme neonwave
 set background=dark
 set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
 set linespace=0
+set cursorline
 "Removing sidebars
 set guioptions-=e
 set guioptions-=L
@@ -73,17 +73,17 @@ set omnifunc=syntaxcomplete#Complete
 " folding plugin
 set nofoldenable
 " Keybindings
-"inoremap ( ()<Esc>:let leavechar=")"<CR>i
-"inoremap [ []<Esc>:let leavechar="]"<CR>i
-"inoremap { {}<Esc>:let leavechar="}"<CR>i
-"inoremap " ""<Esc>:let leavechar="\""<CR>i
-"inoremap ' ''<Esc>:let leavechar="'"<CR>i
-"inoremap [<CR> [<CR>]<c-o>O
-"inoremap {<CR> {<CR>}<c-o>O
-"inoremap [<CR> [<CR>]<c-o>O
-"inoremap (<CR> (<CR>)<c-o><<<c-o>O
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
+inoremap " ""<Esc>:let leavechar="\""<CR>i
+inoremap ' ''<Esc>:let leavechar="'"<CR>i
+inoremap [<CR> [<CR>]<c-o>O
+inoremap {<CR> {<CR>}<c-o>O
+inoremap [<CR> [<CR>]<c-o>O
+inoremap (<CR> (<CR>)<c-o><<<c-o>O
 " Wrap and use ctrl-j to escape to outside wrapping char.
-" inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
+inoremap <C-j> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
 " ctrl-p ignores
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab smarttab
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2 expandtab smarttab
