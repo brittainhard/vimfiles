@@ -4,12 +4,13 @@ let mapleader=","
 set textwidth=80
 set cursorline
 au BufWinEnter * match ErrorMsg '\%81v.'
-" set wrapmargin=1
+set wrapmargin=1
 " Disable arrow keys for navigation
 noremap <C-d> <NOP>
 " Easily Open VIMRC
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 noremap <leader>rn :w\|!node %<cr>
+noremap <leader>rg :w\|!go run %<cr>
 noremap <leader>ndb :w\|!node debug %<cr>
 noremap <leader>rp :w\|!python %<cr>
 noremap <leader>ip :w\|!ipython -i %<cr>
@@ -21,6 +22,9 @@ noremap <leader>gb :w\|!gulp build<cr>
 noremap <leader>rc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && ./$(echo -E % \| grep -o '^[^\.]*')<cr>
 noremap <leader>vrc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && valgrind ./$(echo -E % \| grep -o '^[^\.]*')<cr>
 noremap <leader>mc :w\|!make $(echo -E % \| grep -o '^[^\.]*')<cr>
+noremap <leader>arc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && ./$(echo -E % \| grep -o '^[^\.]*') 
+noremap <leader>avrc :w\|!make $(echo -E % \| grep -o '^[^\.]*') && valgrind ./$(echo -E % \| grep -o '^[^\.]*') 
+noremap <leader>amc :w\|!make $(echo -E % \| grep -o '^[^\.]*') 
 map <c-g> :echo "Line number" line(".") <cr>
 " Alphabetize some stuff!
 nnoremap <leader>vs :vsplit \| E<cr>
@@ -35,7 +39,7 @@ set autochdir
 syntax on
 syntax enable
 " Colorsheme & Fonts
-colorscheme molokai
+colorscheme wells-colors
 set background=dark
 set guifont=Inconsolata\ for\ Powerline:h16
 set linespace=0
@@ -70,13 +74,6 @@ let g:pymode_folding = 0
 set omnifunc=syntaxcomplete#Complete
 " folding plugin
 set nofoldenable
-map <f2> :w\|!coffee % <cr>
-map <f3> :w\|!python -i % <cr>
-map <f4> :w\|!python -m unittest discover <cr>
-map <f5> :w\|!ipython -i % <cr>
-map <f6> :w\|!mit-scheme -load % <cr>
-map <f7> :!py.test<cr>
-map <f8> :w\|!pep8 % -v <cr>
 " Keybindings
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
@@ -98,3 +95,5 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+" Go plugin
+let g:go_fmt_autosave = 0
