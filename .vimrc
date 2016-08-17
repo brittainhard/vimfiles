@@ -39,7 +39,7 @@ syntax enable
 " Colorsheme & Fonts
 colorscheme wells-colors
 set background=dark
-set guifont=Inconsolata\ for\ Powerline:h16
+set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
 set linespace=0
 "Removing sidebars
 set guioptions-=e
@@ -98,3 +98,6 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:go_fmt_autosave = 0
 " Airline -- again
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let airline#extensions#tabline#show_buffers = 0
+set laststatus=2
