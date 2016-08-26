@@ -6,6 +6,7 @@ au BufWinEnter * match ErrorMsg '\%81v.'
 set wrapmargin=1
 " Easily Open VIMRC
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
+nnoremap :te :tabedit
 noremap <leader>rn :w\|!node %<cr>
 noremap <leader>rg :w\|!go run %<cr>
 noremap <leader>ndb :w\|!node debug %<cr>
@@ -100,4 +101,10 @@ let g:go_fmt_autosave = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let airline#extensions#tabline#show_buffers = 0
+let g:airline_theme='jellybeans'
 set laststatus=2
+"Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
