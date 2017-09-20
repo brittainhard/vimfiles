@@ -25,8 +25,8 @@ set backspace=indent,eol,start
 "Cursors
 highlight Folded ctermbg=2
 highlight TabLine ctermbg=2
-set cursorline
-highlight CursorLine ctermbg=4 cterm=NONE
+"set cursorline
+highlight CursorLine ctermbg=23 cterm=NONE
 
 "Filetypes
 autocmd FileType js setlocal shiftwidth=2 tabstop=2
