@@ -1,4 +1,3 @@
-filetype plugin indent on
 set relativenumber
 set autoindent
 set shiftwidth=4
