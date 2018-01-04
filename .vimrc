@@ -17,6 +17,7 @@ imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
 
+
 "Deal with mac backspace problem.
 set backspace=2
 set backspace=indent,eol,start
@@ -39,27 +40,20 @@ let mapleader=","
 nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <Leader>sv :source $MYVIMRC<cr>
 nnoremap <Leader>rp :!python %<cr>
+nnoremap <Leader>rjs :!node %<cr>
 nnoremap <Leader>gr :cd `=GITROOT`<cr>:e 
 nnoremap <Leader>grt :cd `=GITROOT`<cr>:tabedit 
 nnoremap <Leader>grh :cd `=GITROOT`<cr>:sp 
 nnoremap <Leader>grv :cd `=GITROOT`<cr>:vs 
 
 "Plugins
+execute pathogen#infect()
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-
-call vundle#end()
 filetype plugin indent on
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
